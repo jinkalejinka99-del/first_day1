@@ -3,7 +3,6 @@ import psutil
 from datetime import datetime
 from tabulate import tabulate
 
-# ---------------- WEATHER FUNCTION ----------------
 def get_weather(city, api_key):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     
@@ -22,15 +21,12 @@ def get_weather(city, api_key):
     except Exception as e:
         return "Error", "-", "-", "-"
 
-
-# ---------------- SYSTEM INFO FUNCTION ----------------
 def get_system_info():
     cpu = psutil.cpu_percent(interval=1)
     ram = psutil.virtual_memory().percent
     return cpu, ram
 
 
-# ---------------- MAIN PROGRAM ----------------
 def main():
     api_key = "YOUR_API_KEY"  # Replace with your API key
     
